@@ -9,13 +9,16 @@ Author URI: http://tovech.com
 License: GPL2
 */
 
-add_action( 'admin_menu', 'register_my_custom_menu_page' );
 
-function register_my_custom_menu_page(){
-    add_menu_page( 'custom menu title', 'custom menu', 'manage_options', 'custompage', 'my_custom_menu_page', plugins_url( 'myplugin/images/icon.png' ), 6 ); 
+//add the function into the admin menu
+add_action( 'admin_menu', 'register_tk_tutorials' );
+function register_tk_tutorials()
+{
+    add_menu_page( 'Tutorials title', 'tutorials', 'manage_options', 'custompage', 'tk_trenton_tutorial_page', plugins_url( 'myplugin/images/icon.png' ), 100); 
 }
 
-function my_custom_menu_page(){
+//the actual function that creates the plugin page
+function tk_trenton_tutorial_page(){
     echo "Admin Page Test";	
 }
 
